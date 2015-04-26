@@ -1,6 +1,9 @@
-<ion-view view-title="IMDB vs Rotten Tomatoes">
+<ion-view view-title="Our Predictions">
   <ion-content>
       <qual_area1 id = "qual_area1"></qual_area1>
         <qual_area id = "qual_area"></qual_area>
+        <select ng-model="movies" ng-options="movie.Title for movie in movies" ng-change="getMovie()">
+    <option value="">-- choose movie --</option>
+  </select>
   </ion-content>
 </ion-view>

@@ -1,0 +1,41 @@
+.barpositive {
+  fill: #d95f0e;
+}
+
+.barnegative {
+  fill: #fec44f;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+.xaxis{
+ font: 0px sans-serif;
+ font-weight: bold;
+ stroke: #000;
+ fill: none;
+ shape-rendering: crispEdges;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+      
+      .axis text {
+        font-family: sans-serif;
+        font-size: 13px;
+      }
+
+      .bar{
+        fill:teal;
+      }
+

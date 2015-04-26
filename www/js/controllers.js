@@ -626,7 +626,15 @@ legend.append("text")
     .style("font-size","13")
     .style("font-family","sans-serif");
 
-// Inspired by http://informationandvisualization.de/blog/box-plot
+
+})
+
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('AccountCtrl', function($scope) {
+  // Inspired by http://informationandvisualization.de/blog/box-plot
 d3.box = function() {
   var width = 1,
       height = 1,
@@ -1536,14 +1544,4 @@ function iqr(k) {
     return [i, j];
   };
 }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
 });

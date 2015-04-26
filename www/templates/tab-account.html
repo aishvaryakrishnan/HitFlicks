@@ -5,11 +5,12 @@
         <qual_area id = "qual_area"></qual_area>
         </ion-pane>
         <ion-pane>
+          <ion-header-bar align-title="left" class="bar-positive">
+  <h1 class="title">Movie Tweets Word Cloud</h1>
+</ion-header-bar>
         <select ng-model="movie" ng-options="movie.Title for movie in movies" ng-change="getMovie(movie)">
     <option value="">-- choose movie --</option>
   </select>
-   </ion-pane>
-   <ion-pane>
   <wordcloud id = "wordcloud" ng-show="showChart"></wordcloud>
   </ion-pane>
    </ion-content>

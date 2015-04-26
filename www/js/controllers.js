@@ -634,6 +634,11 @@ legend.append("text")
 })
 
 .controller('AccountCtrl', function($scope) {
+	
+	$http.get('movies1.json')
+       .then(function(res){
+          $scope.movies = res.data;                
+        });
   // Inspired by http://informationandvisualization.de/blog/box-plot
 d3.box = function() {
   var width = 1,

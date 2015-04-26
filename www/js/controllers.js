@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 .directive("chart1", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='850' height='200'></svg>",
     link: function(scope){
     }
   };
@@ -10,7 +9,6 @@ angular.module('starter.controllers', [])
 .directive("chart2", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='850' height='200'></svg>",
     link: function(scope, elem, attrs){
     }
   };
@@ -18,7 +16,6 @@ angular.module('starter.controllers', [])
 .directive("chart", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='850' height='200'></svg>",
     link: function(scope, elem, attrs){
     }
   };

@@ -652,7 +652,7 @@ legend.append("text")
         var fill = d3.scale.category20();
   var data = movie.cnt;
 
-d3.layout.cloud().size([850, 200])
+d3.layout.cloud().size([850, 700])
       .words(data.map(function(d) {
         return {text: d.word, size: d.freq};
       }))
@@ -665,8 +665,8 @@ d3.layout.cloud().size([850, 200])
 
   function draw(words) {
       d3.select("wordcloud").append("svg")
-        .attr("width", 200)
-        .attr("height", 200)
+        .attr("width", 500)
+        .attr("height", 500)
       .append("g")
         .attr("transform", "translate(150,150)")
       .selectAll("text")

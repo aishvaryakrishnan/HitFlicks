@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
 .directive("wordcloud", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='1250' height='300'></svg>",
+    template: "<svg width='1150' height='300'></svg>",
     link: function(scope, elem, attrs){
     }
   };
@@ -657,7 +657,7 @@ legend.append("text")
             .domain([0,1,2,3,4,5,6,10,15,20,100])
             .range(["#ddd", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
 
-    d3.layout.cloud().size([1200, 300])
+    d3.layout.cloud().size([1100, 300])
             .words(frequency_list)
             .rotate(0)
             .fontSize(function(d) { return (d.freq*50); })
@@ -667,7 +667,7 @@ legend.append("text")
     function draw(words) {
     	d3.select("wordcloud").select("svg").remove();
         d3.select("wordcloud").append("svg")
-                .attr("width", 1250)
+                .attr("width", 1150)
                 .attr("height", 350)
                 .attr("class", "wordcloud")
                 .append("g")

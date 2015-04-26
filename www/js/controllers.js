@@ -665,7 +665,7 @@ legend.append("text")
             .start();
 
     function draw(words) {
-        d3.select("body").append("svg")
+        d3.select("wordcloud").append("svg")
                 .attr("width", 850)
                 .attr("height", 350)
                 .attr("class", "wordcloud")

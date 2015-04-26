@@ -5,6 +5,6 @@
         <select ng-model="movie" ng-options="movie.Title for movie in movies" ng-change="getMovie(movie)">
     <option value="">-- choose movie --</option>
   </select>
-  <wordcloud id = "wordcloud"></wordcloud>
+  <wordcloud id = "wordcloud" ng-show="showChart"></wordcloud>
   </ion-content>
 </ion-view>

@@ -23,6 +23,22 @@ angular.module('starter.controllers', [])
     }
   };
 })
+.directive("#qual_area", function($window) {
+  return{
+    restrict: "EA",
+    template: "<svg width='850' height='200'></svg>",
+    link: function(scope){
+    }
+  };
+})
+.directive("#qual_area2", function($window) {
+  return{
+    restrict: "EA",
+    template: "<svg width='850' height='200'></svg>",
+    link: function(scope, elem, attrs){
+    }
+  };
+})
 
 .controller('DashCtrl', function($scope) {
 
@@ -976,7 +992,7 @@ d3.json("songs.json", function(error, full_data) {
     .domain([qual_min, qual_max])
     .showLabels(labels);
 
-  var qual_svg = d3.select("#qual_area").append("svg")
+  var qual_svg = d3.select("#qual_area1").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "box")    

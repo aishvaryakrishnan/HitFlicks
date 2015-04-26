@@ -635,9 +635,9 @@ legend.append("text")
 
 .controller('AccountCtrl', function($scope,$http) {
 	
-	$http.get('movies1.json')
+	$http.get('words.json')
        .then(function(res){
-          $scope.movies = res.data;                
+          $scope.movies = res.data.movies;                
         });
         
         $scope.getMovie = function(movie) {

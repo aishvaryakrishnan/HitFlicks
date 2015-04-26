@@ -629,7 +629,7 @@ legend.append("text")
 
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats,$http) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 

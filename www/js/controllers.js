@@ -640,7 +640,7 @@ legend.append("text")
           $scope.movies = res.data;                
         });
         
-        function getMovie(){
+        $scope getMovie = function() {
         alert($scope.movie.Title);	
         }
   // Inspired by http://informationandvisualization.de/blog/box-plot

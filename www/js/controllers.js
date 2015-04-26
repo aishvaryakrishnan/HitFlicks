@@ -42,7 +42,6 @@ angular.module('starter.controllers', [])
 .directive("wordcloud", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='850' height='500'></svg>",
     link: function(scope, elem, attrs){
     }
   };

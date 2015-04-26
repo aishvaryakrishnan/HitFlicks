@@ -639,6 +639,10 @@ legend.append("text")
        .then(function(res){
           $scope.movies = res.data;                
         });
+        
+        function getMovie(){
+        	
+        }
   // Inspired by http://informationandvisualization.de/blog/box-plot
 d3.box = function() {
   var width = 1,

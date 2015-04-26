@@ -659,7 +659,7 @@ legend.append("text")
     d3.layout.cloud().size([800, 300])
             .words(frequency_list)
             .rotate(0)
-            .fontSize(function(d) { return d.Freq; })
+            .fontSize(function(d) { return (d.freq*50); })
             .on("end", draw)
             .start();
 
@@ -675,7 +675,7 @@ legend.append("text")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
-                .style("font-size", function(d) { return d.Freq + "px"; })
+                .style("font-size", function(d) { return (d.freq*50) + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";

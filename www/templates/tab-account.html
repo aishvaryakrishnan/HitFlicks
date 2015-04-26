@@ -1,5 +1,6 @@
 <ion-view view-title="Our Predictions">
   <ion-content>
+  <ion-content>
       <qual_area1 id = "qual_area1"></qual_area1>
         <qual_area id = "qual_area"></qual_area>
         </ion-content>
@@ -7,6 +8,9 @@
         <select ng-model="movie" ng-options="movie.Title for movie in movies" ng-change="getMovie(movie)">
     <option value="">-- choose movie --</option>
   </select>
+   </ion-content>
+   <ion-content>
   <wordcloud id = "wordcloud" ng-show="showChart"></wordcloud>
   </ion-content>
+   </ion-content>
 </ion-view>

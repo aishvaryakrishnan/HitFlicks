@@ -642,14 +642,14 @@ legend.append("text")
 })
 
 .controller('AccountCtrl', function($scope,$http) {
-	
+	$scope.showChart = false;
 	$http.get('words.json')
        .then(function(res){
           $scope.movies = res.data.movies;                
         });
         
         $scope.getMovie = function(movie) {
-        
+        $scope.showChart = true;
         var fill = d3.scale.category20();
   var data = movie.cnt;
 

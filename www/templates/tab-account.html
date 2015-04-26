@@ -3,14 +3,17 @@
       <qual_area1 id = "qual_area1"></qual_area1>
         <qual_area id = "qual_area"></qual_area>
           
-         </ion-content>   
-         <ion-content>
-           <ion-header-bar align-title="left" class="bar-positive">
-  <h1 class="title">Movie Tweets Word Cloud</h1>
-</ion-header-bar>
+         <div class="card">
+				<div class="item item-divider">
+					Movie Tweets Word Cloud
+				</div>
+				<div class="item item-text-wrap">
         <select ng-model="movie" ng-options="movie.Title for movie in movies" ng-change="getMovie(movie)">
     <option value="">-- choose movie --</option>
   </select>
+  </div>
+				<div class="item item-text-wrap">
   <wordcloud id = "wordcloud" ng-show="showChart"></wordcloud>
+  </div>
    </ion-content>  
 </ion-view>

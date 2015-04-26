@@ -641,7 +641,7 @@ legend.append("text")
         });
         
         $scope.getMovie = function(movie) {
-        alert(movie);	
+        alert(movie.Title);	
         };
   // Inspired by http://informationandvisualization.de/blog/box-plot
 d3.box = function() {

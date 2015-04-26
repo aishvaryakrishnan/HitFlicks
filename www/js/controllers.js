@@ -629,11 +629,11 @@ legend.append("text")
 
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats,$http) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope,$http) {
 	
 	$http.get('movies1.json')
        .then(function(res){

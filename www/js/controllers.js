@@ -861,7 +861,7 @@ d3.json("features.json", function(nations) {
         
         $scope.getMovie = function(movie) {
         $scope.showChart = true;
-        $scope.TweetCount = movie.count;
+        $scope.TweetCount = "Tweet count = " + movie.count;
         var frequency_list = movie.cnt;
 
 

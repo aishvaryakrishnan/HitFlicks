@@ -647,7 +647,10 @@ legend.append("text")
 })
 
 .controller('AccountCtrl', function($scope,$http) {
-	
+	GoogleAnalyticsObject = "ga", ga = function() { ga.q.push(arguments); }, ga.q = [], ga.l = +new Date;
+ga("create", "UA-48272912-3", "ocks.org");
+ga("send", "pageview");
+
 	// Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.gross; }
 function y(d) { return d.rating; }

@@ -675,7 +675,7 @@ var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // Create the SVG container and set the origin.
-var svg = d3.select("#chart").append("svg")
+var svg = d3.select("monthly").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")

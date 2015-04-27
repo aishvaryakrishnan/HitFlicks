@@ -203,7 +203,7 @@ yScale.domain([0,d3.max(dict.map(function(d) {return +d["value"];}))]);
   .style("font-size","14px");
 
 svg.append("g")
-      .attr("class", "xaxis")
+      .attr("class", "xaxis1")
       .attr("transform", "translate(0," + height + ")")
   .call(xAxis)
   .append("text")

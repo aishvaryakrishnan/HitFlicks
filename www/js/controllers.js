@@ -47,7 +47,6 @@ angular.module('starter.controllers', [])
 .directive("monthly", function($window) {
   return{
     restrict: "EA",
-    template: "<svg width='1150' height='300'></svg>",
     link: function(scope, elem, attrs){
     }
   };

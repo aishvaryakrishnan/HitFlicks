@@ -675,7 +675,7 @@ var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // Create the SVG container and set the origin.
-var svg = d3.select("monthly").append("svg")
+var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -720,8 +720,8 @@ var label = svg.append("text")
 // Load the data.
 d3.json("features.json", function(nations) {
   //var nations = [nations1[0],nations1[2]];
-  console.log("here");
-  console.log(nations);
+  //console.log("here");
+  //console.log(nations);
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
 
@@ -760,10 +760,10 @@ d3.json("features.json", function(nations) {
 
   // Positions the dots based on data.
   function position(dot) {
-    console.log(dot);
+    //console.log(dot);
     dot .attr("cx", function(d) { if(isNaN(xScale(x(d))) ){ return 100000; } return xScale(x(d)); })
-        .attr("cy", function(d) { if(isNaN(yScale(y(d))) ){ return 100000; } console.log(y(d)); return yScale(y(d)); })
-        .attr("r", function(d) { console.log(radius(d)); return 10*radius(d); });
+        .attr("cy", function(d) { if(isNaN(yScale(y(d))) ){ return 100000; } return yScale(y(d)); })
+        .attr("r", function(d) {  return 10*radius(d); });
   }
 
   // Defines a sort order so that the smallest dots are drawn on top.
@@ -800,6 +800,18 @@ d3.json("features.json", function(nations) {
     }
   }
 
+  slices = ["PG-13","R","Unrated","PG","G"];
+  svg.append('g')
+  .attr('class', 'legend')
+    .selectAll('text')
+    .data(slices)
+      .enter()
+        .append('text')
+          .text(function(d) { return '• ' + d; })
+          .attr('fill', function(d) { return colorScale(d); })
+          .attr('y', function(d, i) { return 20 * (i + 1); })
+          .attr('x', function(d, i) { return 800; })
+
   // Tweens the entire chart by first tweening the year, and then the data.
   // For the interpolated data, the dots and label are redrawn.
   function tweenYear() {
@@ -815,7 +827,7 @@ d3.json("features.json", function(nations) {
 
   // Interpolates the dataset for the given (fractional) year.
   function interpolateData(year) {
-      console.log(nations);
+      //console.log(nations);
     return nations.map(function(d) {
       return {
         name: d.name,

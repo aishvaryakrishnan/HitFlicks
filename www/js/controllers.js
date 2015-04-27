@@ -650,24 +650,24 @@ legend.append("text")
 ga("create", "UA-48272912-3", "ocks.org");
 ga("send", "pageview");
 
-	// Various accessors that specify the four dimensions of data to visualize.
-function x(d) { return d.gross; }
+// Various accessors that specify the four dimensions of data to visualize.
+function x(d) { return d.gross/1000; }
 function y(d) { return d.rating; }
 function radius(d) { return d.count; }
 function color(d) { return d.Rated; }
 function key(d) { return d.name; }
     var start = 1;
     var end = 12;
-
+var months = ["","JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
     width = 960 - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
-var xScale = d3.scale.log().domain([1000, 346383000]).range([0, width]),
+var xScale = d3.scale.log().domain([1, 346383]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 10]).range([height, 0]),
-    radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
+    radiusScale = d3.scale.linear().domain([0, 5]).range([0, 40]),
     colorScale = d3.scale.category10();
 
 // The x & y axes.
@@ -698,7 +698,7 @@ svg.append("text")
     .attr("text-anchor", "end")
     .attr("x", width)
     .attr("y", height - 6)
-    .text("income per capita, inflation-adjusted (dollars)");
+    .text("Gross revenue in 1000$");
 
 // Add a y-axis label.
 svg.append("text")
@@ -715,7 +715,7 @@ var label = svg.append("text")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text(start);
+    .text("JAN");
 
 // Load the data.
 d3.json("features.json", function(nations) {
@@ -763,7 +763,7 @@ d3.json("features.json", function(nations) {
     console.log(dot);
     dot .attr("cx", function(d) { if(isNaN(xScale(x(d))) ){ return 100000; } return xScale(x(d)); })
         .attr("cy", function(d) { if(isNaN(yScale(y(d))) ){ return 100000; } console.log(y(d)); return yScale(y(d)); })
-        .attr("r", function(d) { if(isNaN(radiusScale(d)) ){ return 10; } return 100*radiusScale(radius(d)); });
+        .attr("r", function(d) { console.log(radius(d)); return 10*radius(d); });
   }
 
   // Defines a sort order so that the smallest dots are drawn on top.
@@ -810,7 +810,7 @@ d3.json("features.json", function(nations) {
   // Updates the display to show the specified year.
   function displayYear(year) {
     dot.data(interpolateData(year), key).call(position).sort(order);
-    label.text(Math.round(year));
+    label.text(months[Math.round(year)]);
   }
 
   // Interpolates the dataset for the given (fractional) year.
